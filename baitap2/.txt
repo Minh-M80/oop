@@ -1,0 +1,70 @@
+this->id="SV" +string(3-to_string(dem).length(),'0')+ to_string(dem);
+
+void chuanHoaTen(string s){
+    stringstream ss(s);
+    string token;
+    while(ss>>token){
+        
+    };
+}
+
+void chuanHoa(SinhVien &a){
+    string res="";
+    stringstream ss(a.ten)
+    string token;
+    while(ss>>token){
+        res+=toupper(token[0]);
+        for(int i=1;i<token.length();i++){
+            res+=tolower(token[i]);
+        }
+        res+=" ";
+    }
+    res.erase(res.length()-1);
+    a.ten=res;
+}
+
+
+void SinhVien::chuanHoaNgaySinh() {
+    if (ngaySinh[2] != '/') ngaySinh = '0' + ngaySinh; // Nếu ngày chỉ có 1 chữ số, thêm '0'
+    if (ngaySinh[5] != '/') ngaySinh.insert(3, "0");  // Nếu tháng chỉ có 1 chữ số, thêm '0'
+}
+
+int gcd(int a, int b){
+	while(b !=0){
+		int du=a%b;
+		a=b;
+		b=du;
+		
+		
+		
+		
+	} return a;
+	
+}
+
+string GIANGVIEN::vietTat(string s){
+    stringstream ss(s);
+    string word,res="";
+    while(ss>>word){
+        res +=toupper(word[0]);
+    }
+    return res;
+}
+
+friend istream& operator >> (istream &in,SinhVien &a);
+friend ostream& operator << (istream &os,SinhVien a);
+
+char myToUpper(char c) {
+    if (c >= 'a' && c <= 'z') {
+        return c - ('a' - 'A'); // hoặc return c - 32;
+    }
+    return c;
+}
+
+// Hàm chuyển ký tự hoa thành chữ thường
+char myToLower(char c) {
+    if (c >= 'A' && c <= 'Z') {
+        return c + ('a' - 'A'); // hoặc return c + 32;
+    }
+    return c;
+}
